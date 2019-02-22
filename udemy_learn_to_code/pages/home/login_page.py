@@ -35,7 +35,7 @@ class LoginPage(SeleniumDriver):
         self.sendKeys(password, self._password_field)
 
     def clickLoginButton(self):
-        self.elementClick(self._login_button, locatorType="name")
+        self.elementClick(self._login_button, locatorType="xpath")
 
     def login(self, email, password):
         self.clickLoginLink()

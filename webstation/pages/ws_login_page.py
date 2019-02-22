@@ -9,15 +9,21 @@ class LoginPage():
         self.driver = driver
 
         # add html elements/locator types:
-        self.username_textbox_id =          'userName'
-        self.password_textbox_id =          'password'
-        self.stay_logged_checkbox_xpath =   '//*[@id="login"]/table/tbody/tr[3]/td/label'
-        self.eula_checkbox_xpath =          '//*[@id="login"]/table/tbody/tr[4]/td/label[1]'
-        self.login_button_id =              'loginUser'
-        self.eula_warning_xpath =           "//div[@class='error_container_inner']"
-        self.wrong_password_warning_xpath = "//td[@class='red']"
-        self.user_button_id =               'user-button'
-        self.logout_button_xpath =           "//a[contains(text(),'Logout')]"
+        self.username_textbox_id         =          'userName'
+        self.password_textbox_id         =          'password'
+        self.stay_logged_checkbox_xpath  =          '//*[@id="login"]/table/tbody/tr[3]/td/label'
+        self.eula_checkbox_xpath         =          '//*[@id="login"]/table/tbody/tr[4]/td/label[1]'
+        self.login_button_id             =          'loginUser'
+        self.user_button_id              =          'user-button'
+        self.logout_button_xpath         =           "//a[contains(text(),'Logout')]"
+
+        # alert messages:
+        self.eula_alert_message_xpath    =           '//*[@id="langHolderDiv"]/div[1]/div'
+        self.eula_message_text           =           'You have to accept the End User License Agreement in order to log in.'
+        self.wrong_credentials_warning_xpath =       '//*[@id="langHolderDiv"]/div[1]/div/table/tbody/tr[1]/td'
+        self.wrong_credentials_text      =           'The username or password is incorrect ' \
+                                                     'Please try again.'
+
 
     # now create functions/methods:
     def enter_username(self, username):
@@ -29,9 +35,11 @@ class LoginPage():
         self.driver.find_element_by_id(self.password_textbox_id).clear()
         self.driver.find_element_by_id(self.password_textbox_id).send_keys(password)
     
-    def check_eula(self):
         # self.driver.find_element_by_xpath(self.eula_checkbox_xpath).clear()
         self.driver.find_element_by_xpath(self.eula_checkbox_xpath).click()
+
+    # def check_eula_message(self):
+    #     self.driver.find_element_by_xpath(self.eula_alert_message_xpath).is_displayed()
 
     def click_login(self):
         self.driver.find_element_by_id(self.login_button_id).click()
