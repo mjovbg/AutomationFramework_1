@@ -12,7 +12,7 @@ class LoginPage(SeleniumDriver):
 
     _username_textbox       =       'userName'
     _password_textbox       =       'password'
-    _eula_checkbox          =       "eulaAccepted"
+    _eula_checkbox          =       "//label[contains(text(),'I accept the')]"
     _login_button           =       'loginUser'
 
     def enterUsername(self, username):
@@ -22,7 +22,8 @@ class LoginPage(SeleniumDriver):
         self.sendKeys(password, self._password_textbox)
 
     def clickEula(self):
-        self.elementClick(self._eula_checkbox, locatorType='name')
+        self.elementClick(self._eula_checkbox, locatorType="xpath")
+        # self.driver.find_element_by_xpath(self._eula_checkbox).click()
 
     def clickLoginButton(self):
         self.elementClick(self._login_button)
