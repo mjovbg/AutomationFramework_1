@@ -4,7 +4,7 @@ import pytest
 
 class TestLogin():
 
-    @pytest.fixture(scope='class')        # with session fixture will run only once! with function will run for each test
+    @pytest.fixture(scope='class')       # with session fixture will run only once! with function will run for each test
     # if you use it in the class -> make session = 'class'
     def test_setup(self):
         global driver       # so you can use it elsewhere
@@ -31,7 +31,6 @@ class TestLogin():
     #     driver.close()
     #     driver.quit()
     #     print('Test completed!')
-
 
 
 
