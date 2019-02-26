@@ -15,32 +15,33 @@ class NavigationPage(SeleniumDriver):
 
         # html elements on the navigation page:
 
-        markets_button_xpath        =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[1]/td/div/table/tbody/tr/td[1]/a'
-        _currencies_button_xpath    =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[2]/td/div/table/tbody/tr/td[1]/a'
-        _commodities_button_spath   =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/a'
-        _fixed_button_xpath         =       '//*[@id="fixedIncomeButton"]/table/tbody/tr/td[1]/a'
-        _futures_button_xpath       =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[5]/td/div/table/tbody/tr/td[1]/a'
-        _trump_button_xpath         =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[6]/td/div/table/tbody/tr/td/a'
-        # backtester will be added at the end!
-        _screener_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[8]/td/div/table/tbody/tr/td/a'
-        _news_button_xpath          =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[9]/td/div/table/tbody/tr/td/a'
-        _calendar_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[10]/td/div/table/tbody/tr/td/a'
-        _portfolio_button_xpath     =       '//*[@id="portfolioButton"]/table/tbody/tr/td/a/span'
-        _watchlist_button_xpath     =       '//*[@id="watchlistButton"]/table/tbody/tr/td/a'
-        _analyzer_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[13]/td/div/table/tbody/tr/td/a'
-        _economicdata_button_xpath  =       '//*[@id="economicDataButton"]/table/tbody/tr/td/a'
-        _etfs_button_xpath          =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[15]/td/div/table/tbody/tr/td/a'
-        _realtime_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[16]/td/div/table/tbody/tr/td/a'
-        _alerts_button_xpath        =       '//*[@id="alertsButton"]/table/tbody/tr/td/a'
-        _funds_button_xpath         =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[18]/td/div/table/tbody/tr/td/a'
-        _backtester_button_xpath    =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[7]/td/div/table/tbody/tr/td/a'
+    _markets_button_xpath        =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[1]/td/div/table/tbody/tr/td[1]/a'
+    _currencies_button_xpath    =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[2]/td/div/table/tbody/tr/td[1]/a'
+    _commodities_button_spath   =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/a'
+    _fixed_button_xpath         =       '//*[@id="fixedIncomeButton"]/table/tbody/tr/td[1]/a'
+    _futures_button_xpath       =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[5]/td/div/table/tbody/tr/td[1]/a'
+    _trump_button_xpath         =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[6]/td/div/table/tbody/tr/td/a'
+    # backtester will be added at the end!
+    _screener_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[8]/td/div/table/tbody/tr/td/a'
+    _news_button_xpath          =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[9]/td/div/table/tbody/tr/td/a'
+    _calendar_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[10]/td/div/table/tbody/tr/td/a'
+    _portfolio_button_xpath     =       '//*[@id="portfolioButton"]/table/tbody/tr/td/a/span'
+    _watchlist_button_xpath     =       '//*[@id="watchlistButton"]/table/tbody/tr/td/a'
+    _analyzer_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[13]/td/div/table/tbody/tr/td/a'
+    _economicdata_button_xpath  =       '//*[@id="economicDataButton"]/table/tbody/tr/td/a'
+    _etfs_button_xpath          =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[15]/td/div/table/tbody/tr/td/a'
+    _realtime_button_xpath      =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[16]/td/div/table/tbody/tr/td/a'
+    _alerts_button_xpath        =       '//*[@id="alertsButton"]/table/tbody/tr/td/a'
+    _funds_button_xpath         =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[18]/td/div/table/tbody/tr/td/a'
+    _backtester_button_xpath    =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[7]/td/div/table/tbody/tr/td/a'
 
     def clickMarkets(self):
-        self.elementClick(self.
+        self.elementClick(self._markets_button_xpath, locatorType='xpath')
         time.sleep(3)
 
-    def clcikCurrencies(self):
+    def clickCurrencies(self):
         self.elementClick(self._currencies_button_xpath, locatorType='xpath')
+        time.sleep(3)
 
     # def fixed_income(self):
     #     self.driver.find_element_by_xpath(self.fixed_button_xpath).click()

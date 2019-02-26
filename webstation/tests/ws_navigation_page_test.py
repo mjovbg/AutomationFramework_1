@@ -20,6 +20,7 @@ class TestNavigation(unittest.TestCase):
 
     lp.validLogin('milo.jovanovi72', 'Proba020')
     np.clickMarkets()
+    np.clickCurrencies()
 
 
 
