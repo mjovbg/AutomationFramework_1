@@ -15,6 +15,11 @@ class LoginPage(SeleniumDriver):
     _eula_checkbox          =       "//label[contains(text(),'I accept the')]"
     _login_button           =       'loginUser'
 
+    # warning_messages:
+    _eula_alert_xpath             =       "//td[contains(text(),'You have to accept the End User License Agreement ')]"
+    _credentials_alert_xpath      =       "//div[@class='error_container_inner']"
+
+
     def enterUsername(self, username):
         self.sendKeys(username, self._username_textbox)
 
@@ -34,6 +39,7 @@ class LoginPage(SeleniumDriver):
         self.clearField(self._password_textbox)
         self.enterPassword(password)
         self.clickLoginButton()
+        self.isElementPresent(self._eula_alert_xpath, locatorType='xpath')
 
     def invalidUserName(self, username, password):
         self.clearField(self._username_textbox)
@@ -42,6 +48,7 @@ class LoginPage(SeleniumDriver):
         self.enterPassword(password)
         self.clickEula()
         self.clickLoginButton()
+        self.isElementPresent(self._credentials_alert_xpath, locatorType='xpath')
 
     def invalidPassword(self, username, password):
         self.clearField(self._username_textbox)
@@ -50,6 +57,8 @@ class LoginPage(SeleniumDriver):
         self.enterPassword(password)
         self.clickEula()
         self.clickLoginButton()
+        self.isElementPresent(self._credentials_alert_xpath, locatorType='xpath')
+
 
     def validLogin(self, username, password):
         self.clearField(self._username_textbox)

@@ -81,13 +81,13 @@ class SeleniumDriver():
         try:
             element = self.getElement(locator, locatorType)
             if element is not None:
-                print("Element Found")
+                print("Element Present")
                 return True
             else:
-                print("Element not found")
+                print("Element not present")
                 return False
         except:
-            print("Element not found")
+            print("Element not present")
             return False
 
     def elementPresenceCheck(self, locator, byType):
