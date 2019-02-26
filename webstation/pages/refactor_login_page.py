@@ -28,8 +28,33 @@ class LoginPage(SeleniumDriver):
     def clickLoginButton(self):
         self.elementClick(self._login_button)
 
-    def validLogin(self, username, password):
+    def noEulaLogin(self, username, password):
+        self.clearField(self._username_textbox)
         self.enterUsername(username)
+        self.clearField(self._password_textbox)
+        self.enterPassword(password)
+        self.clickLoginButton()
+
+    def invalidUserName(self, username, password):
+        self.clearField(self._username_textbox)
+        self.enterUsername(username)
+        self.clearField(self._password_textbox)
+        self.enterPassword(password)
+        self.clickEula()
+        self.clickLoginButton()
+
+    def invalidPassword(self, username, password):
+        self.clearField(self._username_textbox)
+        self.enterUsername(username)
+        self.clearField(self._password_textbox)
+        self.enterPassword(password)
+        self.clickEula()
+        self.clickLoginButton()
+
+    def validLogin(self, username, password):
+        self.clearField(self._username_textbox)
+        self.enterUsername(username)
+        self.clearField(self._password_textbox)
         self.enterPassword(password)
         self.clickEula()
         self.clickLoginButton()

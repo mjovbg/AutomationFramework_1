@@ -68,6 +68,15 @@ class SeleniumDriver():
             print("Cannot send data on the element with locator: " + locator + " locatorType: " + locatorType)
             print_stack()
 
+    def clearField(self, locator, locatorType = 'id'):
+        try:
+            element = self.getElement(locator, locatorType)
+            element.clear()
+            print("cleared element with locator: " + locator + " locatorType: " + locatorType)
+        except:
+            print("Cannot clear the element with locator: " + locator + " locatorType: " + locatorType)
+            print_stack()
+
     def isElementPresent(self, locator, locatorType = 'id'):
         try:
             element = self.getElement(locator, locatorType)
