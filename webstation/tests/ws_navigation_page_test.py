@@ -21,6 +21,22 @@ class TestNavigation(unittest.TestCase):
     lp.validLogin('milo.jovanovi72', 'Proba020')
     np.clickMarkets()
     np.clickCurrencies()
+    np.clickCommodities()
+    np.clickFixedIncome()
+    np.clickFutures()
+    np.clickTrumpEffect()
+    np.clickScreener()
+    np.clickNews()
+    np.clickCalendar()
+    np.clickPortfolio()
+    np.clickWatchlist()
+    np.clickAnalyzer()
+    np.clickEconomicData()
+    np.clickEtfs()
+    np.clickRealTime()
+    np.clickAlerts()
+    np.clickFunds()
+    np.clickBacktester()
 
 
 
@@ -45,17 +61,11 @@ class TestNavigation(unittest.TestCase):
     #     navigation.markets()
     #     time.sleep(5)
 
-
-
-
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.close()
-        cls.driver.quit()
-        print('Test Completed')
-
-
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.driver.close()
+    #     cls.driver.quit()
+    #     print('Test Completed')
 
 # if __name__ == "__main__":
 #     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='D:\MJ\MJ\PROJECTS\AutomationFramework_1\webstation\reports\test-runners'), verbosity=2)

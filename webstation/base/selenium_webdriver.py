@@ -33,9 +33,9 @@ class SeleniumDriver():
             locatorType = locatorType.lower()
             byType = self.getByType(locatorType)
             element = self.driver.find_element(byType, locator)
-            print("Element Found + ",  locator)
+            # print("Element Found + ",  locator)
         except:
-            print("Element not found")
+            print("Element not found + ", locator)
         return element
 
     def elementClick(self, locator, locatorType="id"):
@@ -48,10 +48,15 @@ class SeleniumDriver():
         try:
             element = self.getElement(locator, locatorType)
             element.click()
-            print("Clicked on element with locator: " + locator + " locatorType: " + locatorType)
+            # print("Clicked on element with locator: " + locator + " locatorType: " + locatorType)
         except:
             print("Cannot click on the element with locator: " + locator + " locatorType: " + locatorType)
             print_stack()
+
+    def getText(self, locator, locatorType="id"):
+        element = self.getElement(locator, locatorType)
+        element_text = element.text
+        print("Text on the element is: " + element_text)
 
     def sendKeys(self, data,  locator, locatorType="id"):
         '''
@@ -63,7 +68,7 @@ class SeleniumDriver():
         try:
             element = self.getElement(locator, locatorType)
             element.send_keys(data)
-            print("Sent data on element with locator: " + locator + " locatorType: " + locatorType)
+            # print("Sent data on element with locator: " + locator + " locatorType: " + locatorType)
         except:
             print("Cannot send data on the element with locator: " + locator + " locatorType: " + locatorType)
             print_stack()
@@ -72,7 +77,7 @@ class SeleniumDriver():
         try:
             element = self.getElement(locator, locatorType)
             element.clear()
-            print("cleared element with locator: " + locator + " locatorType: " + locatorType)
+            # print("cleared element with locator: " + locator + " locatorType: " + locatorType)
         except:
             print("Cannot clear the element with locator: " + locator + " locatorType: " + locatorType)
             print_stack()

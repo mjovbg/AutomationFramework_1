@@ -17,6 +17,7 @@ class LoginTest(unittest.TestCase):
 
     lp = LoginPage(driver)
     lo = HeaderPage(driver)
+
     lp.noEulaLogin('milo.jovanovi72', 'Proba020')
     time.sleep(2)
 
