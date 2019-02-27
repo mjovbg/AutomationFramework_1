@@ -38,26 +38,32 @@ class LoginPage(SeleniumDriver):
         self.enterUsername(username)
         self.clearField(self._password_textbox)
         self.enterPassword(password)
+
         self.clickLoginButton()
         self.isElementPresent(self._eula_alert_xpath, locatorType='xpath')
+        self.getText(self._eula_alert_xpath, locatorType='xpath')
 
     def invalidUserName(self, username, password):
         self.clearField(self._username_textbox)
         self.enterUsername(username)
         self.clearField(self._password_textbox)
         self.enterPassword(password)
+
         self.clickEula()
         self.clickLoginButton()
         self.isElementPresent(self._credentials_alert_xpath, locatorType='xpath')
+        self.getText(self._credentials_alert_xpath, locatorType='xpath')
 
     def invalidPassword(self, username, password):
         self.clearField(self._username_textbox)
         self.enterUsername(username)
         self.clearField(self._password_textbox)
         self.enterPassword(password)
-        self.clickEula()
+
+        # self.clickEula()
         self.clickLoginButton()
         self.isElementPresent(self._credentials_alert_xpath, locatorType='xpath')
+        self.getText(self._credentials_alert_xpath, locatorType='xpath')
 
 
     def validLogin(self, username, password):
@@ -65,7 +71,8 @@ class LoginPage(SeleniumDriver):
         self.enterUsername(username)
         self.clearField(self._password_textbox)
         self.enterPassword(password)
-        self.clickEula()
+
+        # self.clickEula()
         self.clickLoginButton()
 
 
