@@ -28,7 +28,12 @@ class LoginTest(unittest.TestCase):
     time.sleep(2)
 
     lp.validLogin('milo.jovanovi72', 'Proba020')
-    time.sleep(10)
+    login_url = driver.current_url
+    if login_url != base_url:
+        print('Login Successful!')
+    else:
+        print('Login Failed!')
+    time.sleep(7)
 
     lo.logout()
     time.sleep(2)
@@ -36,3 +41,4 @@ class LoginTest(unittest.TestCase):
     driver.close()
     driver.quit()
 
+    print('Test Completed!')

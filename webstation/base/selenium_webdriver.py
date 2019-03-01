@@ -95,6 +95,14 @@ class SeleniumDriver():
             print("Element not present")
             return False
 
+    def is_visible_element(self, locator, locator_type="css"):
+        try:
+            element_visible = self.getElement(locator, locator_type).is_displayed()
+            print('element visible ', locator)
+        except:
+            print('element not visible ', locator)
+        return element_visible
+
     def elementPresenceCheck(self, locator, byType):
         try:
             elementList = self.driver.find_elements(byType, locator)
@@ -108,7 +116,33 @@ class SeleniumDriver():
             print("Element not found")
             return False
 
-    def waitForElement(self, locator, locatorType="id",
+    def isElementSelected(self, locator, locatorType='id'):
+        element_selected = self.getElement(locator, locatorType).is_selected()
+        return element_selected
+
+    # def elementPresent(self, locator, locatorType = 'id'):
+    #     element = None
+    #     try:
+    #         wait = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME)))
+
+    def waitForElement(self, locator, locatorType):
+        element = None
+        byType = self.getByType(locatorType)
+        try:
+            wait = WebDriverWait(self.driver, 10, poll_frequency=1,
+                                 ignored_exceptions=[NoSuchElementException,
+                                                     ElementNotVisibleException,
+                                                     ElementNotSelectableException])
+            element = wait.until(EC.presence_of_element_located((byType,
+                                                             "stopFilter_stops-0")))
+
+            print("Element appeared on the web page")
+        except:
+            print("Element not appeared on the web page")
+        # print_stack()
+        return element
+
+    def waitForElementClickable(self, locator, locatorType="id",
                                timeout=10, pollFrequency=0.5):
         element = None
         try:
@@ -121,10 +155,11 @@ class SeleniumDriver():
                                                      ElementNotSelectableException])
             element = wait.until(EC.element_to_be_clickable((byType,
                                                              "stopFilter_stops-0")))
+
             print("Element appeared on the web page")
         except:
             print("Element not appeared on the web page")
-            print_stack()
+            # print_stack()
         return element
 
 

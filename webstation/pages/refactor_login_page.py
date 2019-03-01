@@ -72,7 +72,7 @@ class LoginPage(SeleniumDriver):
         self.clearField(self._password_textbox)
         self.enterPassword(password)
 
-        # self.clickEula()
+        self.clickEula()
         self.clickLoginButton()
 
 

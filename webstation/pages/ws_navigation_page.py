@@ -11,9 +11,7 @@ class NavigationPage(SeleniumDriver):
         super().__init__(driver)
         self.driver = driver
 
-    # locators:
-
-        # html elements on the navigation page:
+    # buttons in the navigation bar :
 
     _markets_button_xpath        =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[1]/td/div/table/tbody/tr/td[1]/a'
     _currencies_button_xpath    =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[2]/td/div/table/tbody/tr/td[1]/a'
@@ -35,95 +33,117 @@ class NavigationPage(SeleniumDriver):
     _funds_button_xpath         =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[18]/td/div/table/tbody/tr/td/a'
     _backtester_button_xpath    =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[7]/td/div/table/tbody/tr/td/a'
 
+    # elements on pages:
+    _markets_header_css         =       '.main-pages-header.markets'
+    _currencies_header_css      =       ".main-pages-header.currencies"
+    _commodities_header         = ".main-pages-header.commodities"
+    _fixedIncome_header         = ".main-pages-header.fixedIncome"
+    _futures_header             = ".main-pages-header.futures"
+    _funds_header               = ".main-pages-header.funds"
+    _news_header                = ".main-pages-header.news-header"
+    _calendar_header            = ".main-pages-header.companyCalendar"
+    _analyzer_header            = ".main-pages-header.analyzerHeader"
+    _portfolio_header           = ".main-pages-header.portfolio"
+    _watchlist_header           = ".main-pages-header.watchlist"
+    _alert_header               = ".main-pages-header.alerts"
+    _personal_page_header       = ".main-pages-header.personal-pages"
+    _trump_effect_header        = ".main-pages-header.trumpEfect"
+    _economic_data_header       = ".main-pages-header.economicCalendar"
+    _back_tester_header         = ".backtester-header.back-tester"
+    _screener_header            = ".main-pages-header.screenerHeader"
+    _etf_header                 = ".main-pages-header.etf"
+    _real_time_header           = ".main-pages-header.realtimeIn"
+
     def clickMarkets(self):
         self.elementClick(self._markets_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._markets_header_css)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickCurrencies(self):
         self.elementClick(self._currencies_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._currencies_header_css)
         print(self.driver.current_url)
-        time.sleep(5)
+        # time.sleep(5)
 
     def clickCommodities(self):
         self.elementClick(self._commodities_button_spath, locatorType='xpath')
+        self.is_visible_element(self._commodities_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickFixedIncome(self):
         self.elementClick(self._fixedIncome_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._fixedIncome_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickFutures(self):
         self.elementClick(self._futures_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._futures_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickTrumpEffect(self):
         self.elementClick(self._trump_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._trump_effect_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickScreener(self):
         self.elementClick(self._screener_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._screener_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickNews(self):
         self.elementClick(self._news_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._news_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickCalendar(self):
         self.elementClick(self._calendar_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._calendar_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickPortfolio(self):
         self.elementClick(self._portfolio_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._portfolio_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickWatchlist(self):
         self.elementClick(self._watchlist_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._watchlist_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickAnalyzer(self):
         self.elementClick(self._analyzer_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._alert_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickEconomicData(self):
         self.elementClick(self._economicdata_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._economic_data_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickEtfs(self):
         self.elementClick(self._etfs_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._etf_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickRealTime(self):
         self.elementClick(self._realtime_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._real_time_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickAlerts(self):
         self.elementClick(self._alerts_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._alert_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickFunds(self):
         self.elementClick(self._funds_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._funds_header)
         print(self.driver.current_url)
-        time.sleep(5)
 
     def clickBacktester(self):
         self.elementClick(self._backtester_button_xpath, locatorType='xpath')
+        self.is_visible_element(self._back_tester_header)
         print(self.driver.current_url)
-        time.sleep(5)
     # def fixed_income(self):
     #     self.driver.find_element_by_xpath(self.fixed_button_xpath).click()
     #
