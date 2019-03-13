@@ -36,7 +36,7 @@ class TestLogin(unittest.TestCase):
         driver.implicitly_wait(3)       
         login.enter_username('milo.jovanovi72')
         login.enter_password('Proba0201')
-        login.check_eula()
+        #login.check_eula()
         time.sleep(1)
         login.click_login()
         # time.sleep(1)

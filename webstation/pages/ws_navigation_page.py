@@ -34,8 +34,8 @@ class NavigationPage(SeleniumDriver):
     _backtester_button_xpath    =       '//*[@id="lowerDiv"]/div[1]/table/tbody/tr[7]/td/div/table/tbody/tr/td/a'
 
     # elements on pages:
-    _markets_header_css         =       '.main-pages-header.markets'
-    _currencies_header_css      =       ".main-pages-header.currencies"
+    _markets_header_css         = ".main-pages-header.markets"
+    _currencies_header_css      = ".main-pages-header.currencies"
     _commodities_header         = ".main-pages-header.commodities"
     _fixedIncome_header         = ".main-pages-header.fixedIncome"
     _futures_header             = ".main-pages-header.futures"
@@ -56,93 +56,93 @@ class NavigationPage(SeleniumDriver):
 
     def clickMarkets(self):
         self.elementClick(self._markets_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._markets_header_css)
+        self.isElementPresent(self._markets_header_css)
         print(self.driver.current_url)
 
     def clickCurrencies(self):
         self.elementClick(self._currencies_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._currencies_header_css)
+        self.isElementPresent(self._currencies_header_css)
         print(self.driver.current_url)
         # time.sleep(5)
 
     def clickCommodities(self):
         self.elementClick(self._commodities_button_spath, locatorType='xpath')
-        self.is_visible_element(self._commodities_header)
+        self.isElementPresent(self._commodities_header)
         print(self.driver.current_url)
 
     def clickFixedIncome(self):
         self.elementClick(self._fixedIncome_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._fixedIncome_header)
+        self.isElementPresent(self._fixedIncome_header)
         print(self.driver.current_url)
 
     def clickFutures(self):
         self.elementClick(self._futures_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._futures_header)
+        self.isElementPresent(self._futures_header)
         print(self.driver.current_url)
 
     def clickTrumpEffect(self):
         self.elementClick(self._trump_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._trump_effect_header)
+        self.isElementPresent(self._trump_effect_header)
         print(self.driver.current_url)
 
     def clickScreener(self):
         self.elementClick(self._screener_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._screener_header)
+        self.isElementPresent(self._screener_header)
         print(self.driver.current_url)
 
     def clickNews(self):
         self.elementClick(self._news_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._news_header)
+        self.isElementPresent(self._news_header)
         print(self.driver.current_url)
 
     def clickCalendar(self):
         self.elementClick(self._calendar_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._calendar_header)
+        self.isElementPresent(self._calendar_header)
         print(self.driver.current_url)
 
     def clickPortfolio(self):
         self.elementClick(self._portfolio_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._portfolio_header)
+        self.isElementPresent(self._portfolio_header)
         print(self.driver.current_url)
 
     def clickWatchlist(self):
         self.elementClick(self._watchlist_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._watchlist_header)
+        self.isElementPresent(self._watchlist_header)
         print(self.driver.current_url)
 
     def clickAnalyzer(self):
         self.elementClick(self._analyzer_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._alert_header)
+        self.isElementPresent(self._alert_header)
         print(self.driver.current_url)
 
     def clickEconomicData(self):
         self.elementClick(self._economicdata_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._economic_data_header)
+        self.isElementPresent(self._economic_data_header)
         print(self.driver.current_url)
 
     def clickEtfs(self):
         self.elementClick(self._etfs_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._etf_header)
+        self.isElementPresent(self._etf_header)
         print(self.driver.current_url)
 
     def clickRealTime(self):
         self.elementClick(self._realtime_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._real_time_header)
+        self.isElementPresent(self._real_time_header)
         print(self.driver.current_url)
 
     def clickAlerts(self):
         self.elementClick(self._alerts_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._alert_header)
+        self.isElementPresent(self._alert_header)
         print(self.driver.current_url)
 
     def clickFunds(self):
         self.elementClick(self._funds_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._funds_header)
+        self.isElementPresent(self._funds_header)
         print(self.driver.current_url)
 
     def clickBacktester(self):
         self.elementClick(self._backtester_button_xpath, locatorType='xpath')
-        self.is_visible_element(self._back_tester_header)
+        self.isElementPresent(self._back_tester_header)
         print(self.driver.current_url)
     # def fixed_income(self):
     #     self.driver.find_element_by_xpath(self.fixed_button_xpath).click()

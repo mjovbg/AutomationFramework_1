@@ -82,7 +82,7 @@ class SeleniumDriver():
             print("Cannot clear the element with locator: " + locator + " locatorType: " + locatorType)
             print_stack()
 
-    def isElementPresent(self, locator, locatorType = 'id'):
+    def isElementPresent(self, locator, locatorType = 'css'):
         try:
             element = self.getElement(locator, locatorType)
             if element is not None:
@@ -95,13 +95,6 @@ class SeleniumDriver():
             print("Element not present")
             return False
 
-    def is_visible_element(self, locator, locator_type="css"):
-        try:
-            element_visible = self.getElement(locator, locator_type).is_displayed()
-            print('element visible ', locator)
-        except:
-            print('element not visible ', locator)
-        return element_visible
 
     def elementPresenceCheck(self, locator, byType):
         try:
@@ -116,16 +109,8 @@ class SeleniumDriver():
             print("Element not found")
             return False
 
-    def isElementSelected(self, locator, locatorType='id'):
-        element_selected = self.getElement(locator, locatorType).is_selected()
-        return element_selected
-
-    # def elementPresent(self, locator, locatorType = 'id'):
-    #     element = None
-    #     try:
-    #         wait = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME)))
-
-    def waitForElement(self, locator, locatorType):
+    def waitForElement(self, locator, locatorType='css',
+                       timeout=10, pollFrequency=0.5):
         element = None
         byType = self.getByType(locatorType)
         try:
